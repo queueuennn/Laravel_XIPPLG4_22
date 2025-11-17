@@ -67,7 +67,10 @@ class StudentController extends Controller
             'nama_lengkap' => 'required',
             'jenis_kelamin' => 'required',
             'nisn' => 'required',
-        ])
+        ]);
+
+        $student->update($validated);
+        return redirect()->route('admin.students.index')->with('success', 'Data siswa berhasil diperbarui');
     }
 
     /**
