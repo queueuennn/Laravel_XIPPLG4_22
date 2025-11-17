@@ -122,6 +122,7 @@
   </aside>
 
   <main class="main-content">
+    @yield('content')
     <div class="admin-header">
       <h1>Dashboard</h1>
       <button class="btn-add">+ Tambah Data</button>
