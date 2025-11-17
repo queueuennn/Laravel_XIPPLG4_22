@@ -35,10 +35,33 @@
             <td style="padding:1rem;">{{ $student->nisn }}</td>
             <td style="padding:1rem;">
                 <a href="{{ route('admin.students.edit', $student->id) }}" 
-                   class="btn-edit" 
+                   class="btn btn-warning btn-sm" 
                    style="background:#3a7f75; color:white; padding:0.4rem 0.8rem; border-radius:6px; margin-right:4px;">
                     Edit
                 </a>
+
+				<a href="{{ route('admin.students.show', $student->id) }}" 
+   style="
+        background:#2e5e57;
+        color:white;
+        padding:0.45rem 0.9rem;
+        border-radius:8px;
+        font-size:14px;
+        font-weight:600;
+        text-decoration:none;
+        display:inline-flex;
+        align-items:center;
+        gap:6px;
+        transition:0.25s ease;
+    ">
+    Lihat
+</a>
+
+<style>
+a:hover {
+    opacity: 0.85;
+}
+</style>
 
                 <form action="{{ route('admin.students.destroy', $student->id) }}" method="POST" class="d-inline"
 					onsubmit="return confirm('Apakah kamu yakin ingin menghapus data siswa ini?')">

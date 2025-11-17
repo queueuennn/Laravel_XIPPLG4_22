@@ -44,9 +44,9 @@ class StudentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Student $student)
     {
-        //
+        return view('admin.student.show', compact('student'));
     }
 
     /**
@@ -76,8 +76,13 @@ class StudentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
-    {
-        //
-    }
+    public function destroy(Student $student)
+{
+    $student->delete(); // hapus data
+
+    return redirect()
+        ->route('admin.students.index')
+        ->with('success', 'Data siswa berhasil dihapus');
+}
+
 }
