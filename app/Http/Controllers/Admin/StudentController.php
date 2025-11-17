@@ -62,7 +62,7 @@ class StudentController extends Controller
      */
     public function update(Request $request, Student $student)
     {
-        $validated = $request->valuable([
+        $validated = $request->validate([
             'nis'=> 'required',
             'nama_lengkap' => 'required',
             'jenis_kelamin' => 'required',

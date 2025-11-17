@@ -11,6 +11,8 @@
     </a>
 </div>
 
+
+
 <table class="admin-table" style="width:100%; border-collapse:collapse; background:#f0f7f6; border-radius:8px; overflow:hidden;">
     <thead>
         <tr>
@@ -38,12 +40,12 @@
                     Edit
                 </a>
 
-                <form action="{{ route('admin.students.destroy', $student->id) }}" 
-                      method="POST" class="d-inline" style="display:inline;">
-                    @csrf
-                    @method('DELETE')
+                <form action="{{ route('admin.students.destroy', $student->id) }}" method="POST" class="d-inline"
+					onsubmit="return confirm('Apakah kamu yakin ingin menghapus data siswa ini?')">
+					@csrf
+					@method('DELETE')
                     <button 
-                        class="btn-delete" 
+                        class="btn btn-danger btn-sm" 
                         style="background:#d9534f; color:white; padding:0.4rem 0.8rem; border-radius:6px; border:none;">
                         Hapus
                     </button>
